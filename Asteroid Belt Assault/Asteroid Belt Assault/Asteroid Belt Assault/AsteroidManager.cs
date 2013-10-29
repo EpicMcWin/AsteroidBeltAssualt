@@ -18,7 +18,6 @@ namespace Asteroid_Belt_Assault
         private Texture2D texture;
 
         private bool destroyed;
-
         public bool Destroyed = false;
 
         public List<Sprite> Asteroids = new List<Sprite>();
