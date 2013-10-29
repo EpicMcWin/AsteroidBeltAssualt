@@ -18,12 +18,20 @@ namespace Asteroid_Belt_Assault
         public int LivesRemaining = 3;
         public bool Destroyed = false;
 
+<<<<<<< HEAD
         private Vector2 gunOffset = new Vector2(23, 10);
+=======
+        private Vector2 gunOffset = new Vector2(25, 10);
+>>>>>>> origin/master
         private float shotTimer = 0.0f;
         private float minShotTimer = 0.2f;
         private int playerRadius = 15;
         public ShotManager PlayerShotManager;
+<<<<<<< HEAD
         float angle = 0;
+=======
+
+>>>>>>> origin/master
         public PlayerManager(
             Texture2D texture,  
             Rectangle initialFrame,
@@ -47,9 +55,15 @@ namespace Asteroid_Belt_Assault
             playerAreaLimit =
                 new Rectangle(
                     0,
+<<<<<<< HEAD
                     screenBounds.Height / 2,
                     screenBounds.Width,
                     screenBounds.Height / 2);
+=======
+                    0,
+                    screenBounds.Width,
+                    screenBounds.Height);
+>>>>>>> origin/master
 
             for (int x = 1; x < frameCount; x++)
             {
@@ -77,7 +91,10 @@ namespace Asteroid_Belt_Assault
 
         private void HandleKeyboardInput(KeyboardState keyState)
         {
+<<<<<<< HEAD
             
+=======
+>>>>>>> origin/master
             if (keyState.IsKeyDown(Keys.Up))
             {
                 playerSprite.Velocity += new Vector2(0, -1);
@@ -90,15 +107,23 @@ namespace Asteroid_Belt_Assault
 
             if (keyState.IsKeyDown(Keys.Left))
             {
+<<<<<<< HEAD
                 angle += -1f;
                 playerSprite.Rotation = angle;
+=======
+                playerSprite.Velocity += new Vector2(-1, 0);
+>>>>>>> origin/master
             }
 
             if (keyState.IsKeyDown(Keys.Right))
             {
+<<<<<<< HEAD
                 angle += 1f;
                 playerSprite.Rotation = angle;
                 
+=======
+                playerSprite.Velocity += new Vector2(1, 0);
+>>>>>>> origin/master
             }
 
             if (keyState.IsKeyDown(Keys.Space))

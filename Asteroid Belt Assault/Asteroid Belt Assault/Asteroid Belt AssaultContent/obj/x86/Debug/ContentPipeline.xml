@@ -7,7 +7,11 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Textures\SpriteSheet.xnb</Output>
+=======
+      <Output>C:\Users\eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Textures\SpriteSheet.xnb</Output>
+>>>>>>> origin/master
       <Time>2010-08-10T11:03:12-04:00</Time>
     </Item>
     <Item>
@@ -16,7 +20,11 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Textures\TitleScreen.xnb</Output>
+=======
+      <Output>C:\Users\eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Textures\TitleScreen.xnb</Output>
+>>>>>>> origin/master
       <Time>2010-08-10T11:03:12-04:00</Time>
     </Item>
     <Item>
@@ -25,7 +33,11 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Explosion1.xnb</Output>
+=======
+      <Output>C:\Users\eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Explosion1.xnb</Output>
+>>>>>>> origin/master
       <Time>2010-08-11T22:23:56-04:00</Time>
     </Item>
     <Item>
@@ -34,7 +46,11 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Explosion2.xnb</Output>
+=======
+      <Output>C:\Users\eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Explosion2.xnb</Output>
+>>>>>>> origin/master
       <Time>2010-08-11T22:23:56-04:00</Time>
     </Item>
     <Item>
@@ -43,7 +59,11 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Explosion3.xnb</Output>
+=======
+      <Output>C:\Users\eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Explosion3.xnb</Output>
+>>>>>>> origin/master
       <Time>2010-08-11T22:23:56-04:00</Time>
     </Item>
     <Item>
@@ -52,7 +72,11 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Explosion4.xnb</Output>
+=======
+      <Output>C:\Users\eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Explosion4.xnb</Output>
+>>>>>>> origin/master
       <Time>2010-08-11T22:23:56-04:00</Time>
     </Item>
     <Item>
@@ -61,7 +85,11 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Shot1.xnb</Output>
+=======
+      <Output>C:\Users\eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Shot1.xnb</Output>
+>>>>>>> origin/master
       <Time>2010-08-11T22:23:56-04:00</Time>
     </Item>
     <Item>
@@ -70,7 +98,11 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Shot2.xnb</Output>
+=======
+      <Output>C:\Users\eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Shot2.xnb</Output>
+>>>>>>> origin/master
       <Time>2010-08-11T22:23:56-04:00</Time>
     </Item>
     <Item>
@@ -79,7 +111,11 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
+<<<<<<< HEAD
       <Output>C:\Users\Eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Fonts\Pericles14.xnb</Output>
+=======
+      <Output>C:\Users\eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Fonts\Pericles14.xnb</Output>
+>>>>>>> origin/master
       <Time>2010-08-11T22:54:58-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -88,10 +124,17 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
+<<<<<<< HEAD
       <RootDirectory>C:\Users\Eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt AssaultContent\</RootDirectory>
       <LoggerRootDirectory>C:\Users\Eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\</LoggerRootDirectory>
       <IntermediateDirectory>C:\Users\Eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt AssaultContent\obj\x86\Debug\</IntermediateDirectory>
       <OutputDirectory>C:\Users\Eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\</OutputDirectory>
+=======
+      <RootDirectory>C:\Users\eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt AssaultContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt AssaultContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\eahscs\Documents\GitHub\AsteroidBeltAssualt\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\</OutputDirectory>
+>>>>>>> origin/master
     </Settings>
     <Assemblies>
       <Assembly>
