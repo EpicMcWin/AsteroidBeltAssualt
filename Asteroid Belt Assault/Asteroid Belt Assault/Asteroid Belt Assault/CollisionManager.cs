@@ -140,8 +140,8 @@ namespace Asteroid_Belt_Assault
                 foreach (Enemy enemy in enemyManager.Enemies)
                 {
                     if (asteroid.IsCircleColliding(
-                        enemyManager.EnemySprite.Center,
-                        enemyManager.EnemySprite.CollisionRadius))
+                        enemy.EnemySprite.Center,
+                        enemy.EnemySprite.CollisionRadius))
                     {
                         explosionManager.AddExplosion(
                             asteroid.Center,
@@ -167,6 +167,7 @@ namespace Asteroid_Belt_Assault
                 checkShotToPlayerCollisions();
                 checkEnemyToPlayerCollisions();
                 checkAsteroidToPlayerCollisions();
+                checkAsteroidToEnemyCollisions();
             }
         }
 
