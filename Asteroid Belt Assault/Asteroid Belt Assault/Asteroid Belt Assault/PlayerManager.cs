@@ -96,12 +96,19 @@ namespace Asteroid_Belt_Assault
             }
 
             if (keyState.IsKeyDown(Keys.Right))
-            {
-                
+            {               
                 playerSprite.Velocity += new Vector2(1, 0);
-
             }
 
+            if (keyState.IsKeyDown(Keys.A))
+            {
+                playerSprite.Rotation += .06f;
+            }
+
+            if (keyState.IsKeyDown(Keys.D))
+            {
+                playerSprite.Rotation += .06f;
+            }
             if (keyState.IsKeyDown(Keys.Space))
             {
                 FireShot();
