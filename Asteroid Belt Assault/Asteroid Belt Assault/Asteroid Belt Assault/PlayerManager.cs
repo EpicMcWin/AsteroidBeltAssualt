@@ -68,11 +68,11 @@ namespace Asteroid_Belt_Assault
         
         private void FireShot()
         {
-            float vel = new Vector2((float)Math.Sin(angle), -(float)Math.Cos(angle));
+            Vector2 vel = new Vector2((float)Math.Sin(playerSprite.Rotation), -(float)Math.Cos(playerSprite.Rotation));
             if (shotTimer >= minShotTimer)
             {
                 PlayerShotManager.FireShot(
-                    playerSprite.Location + gunOffset,
+                    playerSprite.Location + vel * 10,
                     vel,
                     true);
                 shotTimer = 0.0f;
