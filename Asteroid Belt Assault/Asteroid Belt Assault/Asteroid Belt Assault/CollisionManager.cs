@@ -27,11 +27,8 @@ namespace Asteroid_Belt_Assault
             this.enemyManager = enemyManager;
             this.explosionManager = explosionManager;
         }
-<<<<<<< HEAD
 
-=======
         //shot to enemy
->>>>>>> origin/master
         private void checkShotToEnemyCollisions()
         {
             foreach (Sprite shot in playerManager.PlayerShotManager.Shots)
@@ -49,18 +46,12 @@ namespace Asteroid_Belt_Assault
                             enemy.EnemySprite.Center,
                             enemy.EnemySprite.Velocity / 10);
                     }
-<<<<<<< HEAD
 
                 }
             }
         }
 
-=======
-                }
-            }
-        }
         //Shot to asteroid
->>>>>>> origin/master
         private void checkShotToAsteroidCollisions()
         {
             foreach (Sprite shot in playerManager.PlayerShotManager.Shots)
@@ -71,26 +62,20 @@ namespace Asteroid_Belt_Assault
                         asteroid.Center,
                         asteroid.CollisionRadius))
                     {
-<<<<<<< HEAD
-                        shot.Location = offScreen;
-=======
+
                         explosionManager.AddExplosion(
                             asteroid.Center,
                             asteroid.Velocity / 10);
                         shot.Location = offScreen;
                         asteroid.Location = offScreen;
                         asteroid.Destroyed = true;
->>>>>>> origin/master
                         asteroid.Velocity += shotToAsteroidImpact;
                     }
                 }
             }
         }
-<<<<<<< HEAD
 
-=======
         //Shot to player
->>>>>>> origin/master
         private void checkShotToPlayerCollisions()
         {
             foreach (Sprite shot in enemyManager.EnemyShotManager.Shots)
@@ -107,11 +92,8 @@ namespace Asteroid_Belt_Assault
                 }
             }
         }
-<<<<<<< HEAD
 
-=======
         //Enemy to Player
->>>>>>> origin/master
         private void checkEnemyToPlayerCollisions()
         {
             foreach (Enemy enemy in enemyManager.Enemies)
@@ -134,10 +116,8 @@ namespace Asteroid_Belt_Assault
             }
         }
 
-<<<<<<< HEAD
-=======
+
         //Asteroid to player
->>>>>>> origin/master
         private void checkAsteroidToPlayerCollisions()
         {
             foreach (Sprite asteroid in asteroidManager.Asteroids)
@@ -159,8 +139,7 @@ namespace Asteroid_Belt_Assault
                 }
             }
         }
-<<<<<<< HEAD
-=======
+
         //enemy to asteroid
         private void checkAsteroidToEnemyCollisions()
         {
@@ -169,8 +148,8 @@ namespace Asteroid_Belt_Assault
                 foreach (Enemy enemy in enemyManager.Enemies)
                 {
                     if (asteroid.IsCircleColliding(
-                        enemyManager.EnemySprite.Center,
-                        enemyManager.EnemySprite.CollisionRadius))
+                        enemy.EnemySprite.Center,
+                        enemy.EnemySprite.CollisionRadius))
                     {
                         explosionManager.AddExplosion(
                             asteroid.Center,
@@ -186,7 +165,7 @@ namespace Asteroid_Belt_Assault
                 }
             }
         }
->>>>>>> origin/master
+
 
         public void CheckCollisions()
         {
@@ -197,6 +176,7 @@ namespace Asteroid_Belt_Assault
                 checkShotToPlayerCollisions();
                 checkEnemyToPlayerCollisions();
                 checkAsteroidToPlayerCollisions();
+                checkAsteroidToEnemyCollisions();
             }
         }
 
