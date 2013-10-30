@@ -17,22 +17,17 @@ namespace Asteroid_Belt_Assault
         private int asteroidFrames;
         private Texture2D texture;
 
-<<<<<<< HEAD
-=======
+
         private bool destroyed;
 
         public bool Destroyed = false;
 
->>>>>>> origin/master
+
         public List<Sprite> Asteroids = new List<Sprite>();
         private int minSpeed = 60;
         private int maxSpeed = 120;
 
-<<<<<<< HEAD
-=======
-        
 
->>>>>>> origin/master
         private Random rand = new Random();
 
         public void AddAsteroid()
@@ -61,8 +56,7 @@ namespace Asteroid_Belt_Assault
             Asteroids.Clear();
         }
 
-<<<<<<< HEAD
-=======
+
         public bool IsActive()
         {
             if (Destroyed)
@@ -73,7 +67,7 @@ namespace Asteroid_Belt_Assault
             return true;
         }
 
->>>>>>> origin/master
+
         public AsteroidManager(
             int asteroidCount,
             Texture2D texture,
