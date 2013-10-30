@@ -65,13 +65,15 @@ namespace Asteroid_Belt_Assault
             playerSprite.CollisionRadius = playerRadius;
         }
 
+        
         private void FireShot()
         {
+            float vel = new Vector2((float)Math.Sin(angle), -(float)Math.Cos(angle));
             if (shotTimer >= minShotTimer)
             {
                 PlayerShotManager.FireShot(
                     playerSprite.Location + gunOffset,
-                    new Vector2(0, -1),
+                    vel,
                     true);
                 shotTimer = 0.0f;
             }
