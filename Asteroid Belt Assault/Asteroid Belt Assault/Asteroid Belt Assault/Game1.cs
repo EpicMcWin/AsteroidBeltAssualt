@@ -23,6 +23,7 @@ namespace Asteroid_Belt_Assault
         GameStates gameState = GameStates.TitleScreen;
         Texture2D titleScreen;
         Texture2D spriteSheet;
+        Texture2D weaponSheet;
 
         StarField starField;
         AsteroidManager asteroidManager;
@@ -75,6 +76,7 @@ namespace Asteroid_Belt_Assault
 
             titleScreen = Content.Load<Texture2D>(@"Textures\TitleScreen");
             spriteSheet = Content.Load<Texture2D>(@"Textures\spriteSheet");
+            weaponSheet = Content.Load<Texture2D>(@"Textures\WeaponSheet");
 
             starField = new StarField(
                 this.Window.ClientBounds.Width,
@@ -278,6 +280,7 @@ namespace Asteroid_Belt_Assault
                 playerManager.Draw(spriteBatch);
                 enemyManager.Draw(spriteBatch);
                 explosionManager.Draw(spriteBatch);
+                
 
                 spriteBatch.DrawString(
                     pericles14,

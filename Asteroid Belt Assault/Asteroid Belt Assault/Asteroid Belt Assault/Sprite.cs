@@ -30,6 +30,9 @@ namespace Asteroid_Belt_Assault
 
         protected Vector2 location = Vector2.Zero;
         protected Vector2 velocity = Vector2.Zero;
+        private Vector2 vector2;
+        private Rectangle rectangle;
+        private Vector2 vector2_2;
 
         public Sprite(
             Vector2 location,
@@ -44,6 +47,14 @@ namespace Asteroid_Belt_Assault
             frames.Add(initialFrame);
             frameWidth = initialFrame.Width;
             frameHeight = initialFrame.Height;
+        }
+
+        public Sprite(Vector2 vector2, Rectangle rectangle, Vector2 vector2_2)
+        {
+            // TODO: Complete member initialization
+            this.vector2 = vector2;
+            this.rectangle = rectangle;
+            this.vector2_2 = vector2_2;
         }
 
         public Vector2 Location

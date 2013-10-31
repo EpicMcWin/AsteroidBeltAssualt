@@ -72,7 +72,7 @@ namespace Asteroid_Belt_Assault
             if (shotTimer >= minShotTimer)
             {
                 PlayerShotManager.FireShot(
-                    playerSprite.Location + vel * 10,
+                    playerSprite.Center + vel * 10,
                     vel,
                     true);
                 shotTimer = 0.0f;
@@ -104,7 +104,7 @@ namespace Asteroid_Belt_Assault
 
             if (keyState.IsKeyDown(Keys.A))
             {
-                playerSprite.Rotation += .06f;
+                playerSprite.Rotation += -.06f;
             }
 
             if (keyState.IsKeyDown(Keys.D))
