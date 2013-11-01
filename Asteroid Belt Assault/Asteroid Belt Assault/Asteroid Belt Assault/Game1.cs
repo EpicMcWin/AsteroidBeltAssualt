@@ -30,6 +30,7 @@ namespace Asteroid_Belt_Assault
         PlayerManager playerManager;
         EnemyManager enemyManager;
         ExplosionManager explosionManager;
+        Powerup powerupManager;
 
         CollisionManager collisionManager;
 
@@ -127,6 +128,9 @@ namespace Asteroid_Belt_Assault
                 enemyManager,
                 explosionManager);
 
+
+            powerupManager = new Powerup(weaponSheet);
+
             SoundManager.Initialize(Content);
 
             pericles14 = Content.Load<SpriteFont>(@"Fonts\Pericles14");
@@ -198,7 +202,9 @@ namespace Asteroid_Belt_Assault
                     playerManager.Update(gameTime);
                     enemyManager.Update(gameTime);
                     explosionManager.Update(gameTime);
+                    powerupManager.Update(gameTime);
                     collisionManager.CheckCollisions();
+
 
                     if (playerManager.Destroyed)
                     {
@@ -280,6 +286,8 @@ namespace Asteroid_Belt_Assault
                 playerManager.Draw(spriteBatch);
                 enemyManager.Draw(spriteBatch);
                 explosionManager.Draw(spriteBatch);
+                powerupManager.Draw(spriteBatch);
+               
                 
 
                 spriteBatch.DrawString(

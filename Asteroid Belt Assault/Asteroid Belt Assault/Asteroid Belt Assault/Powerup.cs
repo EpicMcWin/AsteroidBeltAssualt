@@ -14,44 +14,50 @@ namespace Asteroid_Belt_Assault
         static private float timeSinceLastPowerup = 0.0f;
         static private float timeBetweenPowerups = 2.0f;
         static private Random rand = new Random();
+        Texture2D WeaponSheet;
 
-        private Powerup shotgun = new Powerup();
-        private Powerup superSpin = new Powerup();
-        private Powerup uzi = new Powerup();
-        private Powerup nuke = new Powerup();
-        private Powerup invincible = new Powerup();
-
-
-        public static void SpawnPowerUp(int x, int y)
+        public Powerup(Texture2D weaponSheet)
         {
-            Rectangle Destination = new Rectangle(x, y, 100, 100);
-            if (true)
-            {
-                Sprite newPowerup = new Sprite(
-                new Vector2(Destination.X, Destination.Y),
-               
-                new Rectangle(64, 128, 32, 32),
-                Vector2.Zero);
-                
-                newPowerup.CollisionRadius = 14;
-                newPowerup.AddFrame(new Rectangle(172, 0, 55, 40));
-                
-                newPowerup.Frame = 1;
-                PowerUps.Add(newPowerup);
-                timeSinceLastPowerup = 0.0f;
-            }
+            this.WeaponSheet = weaponSheet;
         }
 
-        private static void checkPowerupSpawns(float elapsed)
+        //private Powerup shotgun = new Powerup();
+        //private Powerup superSpin = new Powerup();
+        //private Powerup uzi = new Powerup();
+        //private Powerup nuke = new Powerup();
+        //private Powerup invincible = new Powerup();
+
+        public void SpawnPowerUp(int x, int y)
+        {
+            Rectangle Destination = new Rectangle(x, y, 100, 100);
+
+            Sprite newPowerup = new Sprite(
+            new Vector2(Destination.X, Destination.Y),
+            WeaponSheet,
+            new Rectangle(64, 128, 32, 32),
+            Vector2.Zero);
+
+            newPowerup.CollisionRadius = 14;
+            newPowerup.AddFrame(new Rectangle(172, 0, 55, 40));
+
+            newPowerup.Frame = 1;
+            PowerUps.Add(newPowerup);
+            timeSinceLastPowerup = 0.0f;
+        }
+        
+            
+    
+
+        private void checkPowerupSpawns(float elapsed)
         {
             timeSinceLastPowerup += elapsed;
-            if (timeSinceLastPowerup >= timeBetweenPowerups)
-            {
+            //if (timeSinceLastPowerup >= timeBetweenPowerups)
+           // {
                 timeSinceLastPowerup = 0;
                 SpawnPowerUp(
-                    rand.Next(0, 600),
-                    rand.Next(0, 300));
-            }
+                    rand.Next(0, 800),
+                    rand.Next(0, 600));
+           // }
         }
 
         public void Update(GameTime gameTime)
@@ -71,52 +77,6 @@ namespace Asteroid_Belt_Assault
                 sprite.Draw(spriteBatch);
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //public Powerup shotgun
-        //{
-        //    get
-        //    {
-
-        //    }
-        //    set
-        //    {
-        //         private void HandleKeyboardInput(KeyboardState keyState)
-        //{
-        //        if (keyState.IsKeyDown(Keys.Space))
-        //        {
-        //            FireShot(playerSprite.Center + vel * 10,
-        //            vel + 10,
-        //            true);
-        //            FireShot(playerSprite.Center + vel * 10,
-        //            vel + 5,
-        //            true);
-        //            FireShot(playerSprite.Center + vel * 10,
-        //            vel - 5,
-        //            true);
-        //            FireShot(playerSprite.Center + vel * 10,
-        //            vel - 10,
-        //            true);
-        //        }
-        //    }
+    
     }
 }
