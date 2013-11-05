@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Asteroid_Belt_Assault
 {
-    class Powerup
+    class PowerupManager
     {
         static public List<Sprite> PowerUps = new List<Sprite>();
         static private float timeSinceLastPowerup = 0.0f;
@@ -16,7 +16,7 @@ namespace Asteroid_Belt_Assault
         static private Random rand = new Random();
         Texture2D WeaponSheet;
 
-        public Powerup(Texture2D weaponSheet)
+        public PowerupManager(Texture2D weaponSheet)
         {
             this.WeaponSheet = weaponSheet;
         }
@@ -42,25 +42,19 @@ namespace Asteroid_Belt_Assault
             PowerUps.Add(newPowerup);
             timeSinceLastPowerup = 0.0f;
         }
-        
-            
-    
 
-        private void checkPowerupSpawns(float elapsed)
+        public void MaybeSpawnPowerups(Vector2 location)
         {
-            timeSinceLastPowerup += elapsed;
-            //if (timeSinceLastPowerup >= timeBetweenPowerups)
-           // {
-                timeSinceLastPowerup = 0;
-                SpawnPowerUp(
-                    rand.Next(0, 800),
-                    rand.Next(0, 600));
-           // }
+            if (rand.Next(0, 3) == 1)
+            {
+                SpawnPowerUp(location);
+            }
         }
+
 
         public void Update(GameTime gameTime)
         {
-            checkPowerupSpawns(gameTime.ElapsedGameTime.Seconds);
+            
 
             foreach (Sprite sprite in PowerUps)
             {

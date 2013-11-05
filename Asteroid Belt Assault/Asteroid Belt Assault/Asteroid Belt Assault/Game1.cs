@@ -30,7 +30,7 @@ namespace Asteroid_Belt_Assault
         PlayerManager playerManager;
         EnemyManager enemyManager;
         ExplosionManager explosionManager;
-        Powerup powerupManager;
+        PowerupManager powerupManager;
 
         CollisionManager collisionManager;
 
@@ -121,15 +121,18 @@ namespace Asteroid_Belt_Assault
                 new Rectangle(0, 100, 50, 50),
                 3,
                 new Rectangle(0, 450, 2, 2));
+            
+            powerupManager = new PowerupManager(weaponSheet);
 
             collisionManager = new CollisionManager(
                 asteroidManager,
                 playerManager,
                 enemyManager,
-                explosionManager);
+                explosionManager,
+                powerupManager);
 
 
-            powerupManager = new Powerup(weaponSheet);
+            
 
             SoundManager.Initialize(Content);
 

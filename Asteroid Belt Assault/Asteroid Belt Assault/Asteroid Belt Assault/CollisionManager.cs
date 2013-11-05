@@ -11,6 +11,7 @@ namespace Asteroid_Belt_Assault
         private AsteroidManager asteroidManager;
         private PlayerManager playerManager;
         private EnemyManager enemyManager;
+        private PowerupManager powerupManager;
         private ExplosionManager explosionManager;
         private Vector2 offScreen = new Vector2(-500, -500);
         private Vector2 shotToAsteroidImpact = new Vector2(0, -20);
@@ -20,12 +21,14 @@ namespace Asteroid_Belt_Assault
             AsteroidManager asteroidManager,
             PlayerManager playerManager,
             EnemyManager enemyManager,
-            ExplosionManager explosionManager)
+            ExplosionManager explosionManager,
+            PowerupManager powerup)
         {
             this.asteroidManager = asteroidManager;
             this.playerManager = playerManager;
             this.enemyManager = enemyManager;
             this.explosionManager = explosionManager;
+            this.powerupManager = powerupManager;
         }
 
         //shot to enemy
@@ -66,6 +69,7 @@ namespace Asteroid_Belt_Assault
                         explosionManager.AddExplosion(
                             asteroid.Center,
                             asteroid.Velocity / 10);
+                        MaybeSpawnPowerups(asteroid.Location);
                         shot.Location = offScreen;
                         asteroid.Location = offScreen;
                         asteroid.Destroyed = true;
