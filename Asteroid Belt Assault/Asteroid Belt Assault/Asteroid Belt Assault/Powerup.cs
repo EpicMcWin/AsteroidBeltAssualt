@@ -27,12 +27,10 @@ namespace Asteroid_Belt_Assault
         //private Powerup nuke = new Powerup();
         //private Powerup invincible = new Powerup();
 
-        public void SpawnPowerUp(int x, int y)
+        public void SpawnPowerUp(Vector2 location)
         {
-            Rectangle Destination = new Rectangle(x, y, 100, 100);
-
             Sprite newPowerup = new Sprite(
-            new Vector2(Destination.X, Destination.Y),
+            location,
             WeaponSheet,
             new Rectangle(64, 128, 32, 32),
             Vector2.Zero);
