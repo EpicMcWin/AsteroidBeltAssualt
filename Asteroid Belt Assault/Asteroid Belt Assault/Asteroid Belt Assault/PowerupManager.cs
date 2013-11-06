@@ -45,7 +45,7 @@ namespace Asteroid_Belt_Assault
 
         public void MaybeSpawnPowerups(Vector2 location)
         {
-            if (rand.Next(0, 3) == 1)
+            if (rand.Next(0, 3) == 0)
             {
                 SpawnPowerUp(location);
             }
