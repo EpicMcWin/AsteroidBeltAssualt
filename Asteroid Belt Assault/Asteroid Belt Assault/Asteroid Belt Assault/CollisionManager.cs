@@ -22,7 +22,7 @@ namespace Asteroid_Belt_Assault
             PlayerManager playerManager,
             EnemyManager enemyManager,
             ExplosionManager explosionManager,
-            PowerupManager powerup)
+            PowerupManager powerupManager)
         {
             this.asteroidManager = asteroidManager;
             this.playerManager = playerManager;
@@ -69,7 +69,8 @@ namespace Asteroid_Belt_Assault
                         explosionManager.AddExplosion(
                             asteroid.Center,
                             asteroid.Velocity / 10);
-                        MaybeSpawnPowerups(asteroid.Location);
+                        powerupManager.MaybeSpawnPowerups(asteroid.Location);
+                        
                         shot.Location = offScreen;
                         asteroid.Location = offScreen;
                         asteroid.Destroyed = true;
@@ -143,6 +144,22 @@ namespace Asteroid_Belt_Assault
                 }
             }
         }
+        //powerup pickup
+        private void checkPlayerToPowerupCollisions()
+        {
+            foreach (Sprite powerup in powerupManager.PowerUps)
+            {
+                if (powerup.IsCircleColliding(
+                    playerManager.playerSprite.Center,
+                    playerManager.playerSprite.CollisionRadius))
+                {
+                    powerup.Location = offScreen;
+                    
+                    powerupManager.Destroyed = true;
+                    powerupManager.GetEffects();
+                }
+            }
+        }
 
         //enemy to asteroid
         private void checkAsteroidToEnemyCollisions()
@@ -181,6 +198,7 @@ namespace Asteroid_Belt_Assault
                 checkEnemyToPlayerCollisions();
                 checkAsteroidToPlayerCollisions();
                 checkAsteroidToEnemyCollisions();
+                checkPlayerToPowerupCollisions();
             }
         }
 

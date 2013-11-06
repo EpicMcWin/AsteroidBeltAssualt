@@ -122,7 +122,7 @@ namespace Asteroid_Belt_Assault
                 3,
                 new Rectangle(0, 450, 2, 2));
             
-            powerupManager = new PowerupManager(weaponSheet);
+            powerupManager = new PowerupManager(weaponSheet, playerManager);
 
             collisionManager = new CollisionManager(
                 asteroidManager,
@@ -162,6 +162,7 @@ namespace Asteroid_Belt_Assault
             enemyManager.Active = true;
             playerManager.PlayerShotManager.Shots.Clear();
             enemyManager.EnemyShotManager.Shots.Clear();
+            powerupManager.PowerUps.Clear();
             playerManager.Destroyed = false;
         }
         

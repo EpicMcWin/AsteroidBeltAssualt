@@ -10,15 +10,22 @@ namespace Asteroid_Belt_Assault
 {
     class PowerupManager
     {
-        static public List<Sprite> PowerUps = new List<Sprite>();
+        public List<Sprite> PowerUps = new List<Sprite>();
         static private float timeSinceLastPowerup = 0.0f;
-        static private float timeBetweenPowerups = 2.0f;
+        static private float timeBetweenPowerups = 5.0f;
+        static private float powerupTime = 0.0f;
+        static private float powerupDuration = 10.0f;
         static private Random rand = new Random();
+        private PlayerManager playerManager;
         Texture2D WeaponSheet;
 
-        public PowerupManager(Texture2D weaponSheet)
+        private bool destroyed;
+        public bool Destroyed = false;
+
+        public PowerupManager(Texture2D weaponSheet, PlayerManager playerManager)
         {
             this.WeaponSheet = weaponSheet;
+            this.playerManager = playerManager;
         }
 
         //private Powerup shotgun = new Powerup();
@@ -32,12 +39,11 @@ namespace Asteroid_Belt_Assault
             Sprite newPowerup = new Sprite(
             location,
             WeaponSheet,
-            new Rectangle(64, 128, 32, 32),
+            new Rectangle(172, 0, 55, 40),
             Vector2.Zero);
 
             newPowerup.CollisionRadius = 14;
-            newPowerup.AddFrame(new Rectangle(172, 0, 55, 40));
-
+            
             newPowerup.Frame = 1;
             PowerUps.Add(newPowerup);
             timeSinceLastPowerup = 0.0f;
@@ -45,15 +51,32 @@ namespace Asteroid_Belt_Assault
 
         public void MaybeSpawnPowerups(Vector2 location)
         {
-            if (rand.Next(0, 3) == 0)
+            if (rand.Next(0, 3) == 1)
             {
                 SpawnPowerUp(location);
             }
         }
 
+        public void GetEffects()
+        {
+            playerManager.minShotTimer = 0.1f;
+        }
+
+        public void Clear()
+        {
+            PowerUps.Clear();
+        }
+
 
         public void Update(GameTime gameTime)
         {
+            timeSinceLastPowerup += (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if (timeSinceLastPowerup >= timeBetweenPowerups)
+            {
+                Clear();
+                
+            }
+            
             
 
             foreach (Sprite sprite in PowerUps)
