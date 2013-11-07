@@ -24,7 +24,8 @@ namespace Asteroid_Belt_Assault
         public float minShotTimer = 0.2f;
         private int playerRadius = 15;
         public ShotManager PlayerShotManager;
-        
+
+        public PowerupType weapon;
 
         public PlayerManager(
             Texture2D texture,  
@@ -32,6 +33,8 @@ namespace Asteroid_Belt_Assault
             int frameCount,
             Rectangle screenBounds)
         {
+            weapon = PowerupType.STARTER;
+
             playerSprite = new Sprite(
                 new Vector2(500, 500),
                 texture,
@@ -68,13 +71,52 @@ namespace Asteroid_Belt_Assault
         
         private void FireShot()
         {
-            Vector2 vel = new Vector2((float)Math.Sin(playerSprite.Rotation), -(float)Math.Cos(playerSprite.Rotation));
+            Vector2 vel;
+
             if (shotTimer >= minShotTimer)
             {
-                PlayerShotManager.FireShot(
-                    playerSprite.Center + vel * 10,
-                    vel,
-                    true);
+                switch (weapon)
+                {
+                    case PowerupType.STARTER:
+                        
+                            vel = new Vector2((float)Math.Sin(playerSprite.Rotation), -(float)Math.Cos(playerSprite.Rotation));
+
+                            PlayerShotManager.FireShot(
+                                playerSprite.Center + vel * 10,
+                                vel,
+                                true);
+                        
+
+                        break;
+
+
+                    case PowerupType.SHOTGUN:
+
+                        for (int x = -3; x < 3; x++)
+                        {
+                            vel = new Vector2((float)Math.Sin(playerSprite.Rotation + Math.PI / 180 * (float)x * 10), -(float)Math.Cos(playerSprite.Rotation + Math.PI / 180 * (float)x * 15));
+
+                            PlayerShotManager.FireShot(
+                                playerSprite.Center + vel * 10,
+                                vel,
+                                true);
+                        }
+
+                        break;
+
+                    case PowerupType.UZI:
+
+                       vel = new Vector2((float)Math.Sin(playerSprite.Rotation), -(float)Math.Cos(playerSprite.Rotation));
+
+                            PlayerShotManager.FireShot(
+                                playerSprite.Center + vel * 10,
+                                vel,
+                                true);
+
+                        break;
+                }
+
+               
                 shotTimer = 0.0f;
             }
         }

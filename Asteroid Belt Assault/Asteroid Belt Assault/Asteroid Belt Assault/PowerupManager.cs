@@ -34,7 +34,9 @@ namespace Asteroid_Belt_Assault
         //private Powerup nuke = new Powerup();
         //private Powerup invincible = new Powerup();
 
-        public void SpawnPowerUp(Vector2 location)
+        
+
+        public void SpawnPowerUp(Vector2 location, PowerupType poweruptype)
         {
             Sprite newPowerup = new Sprite(
             location,
@@ -51,15 +53,41 @@ namespace Asteroid_Belt_Assault
 
         public void MaybeSpawnPowerups(Vector2 location)
         {
+            PowerupType poweruptype;
             if (rand.Next(0, 3) == 1)
             {
-                SpawnPowerUp(location);
+                if (rand.Next(1, 5) == 1)
+                {
+                    poweruptype = PowerupType.UZI;
+                }
+
+                else if (rand.Next(1, 5) == 2)
+                {
+                    poweruptype = PowerupType.SHOTGUN;
+                }
+
+                else if (rand.Next(1, 5) == 3)
+                {
+                    poweruptype = PowerupType.INVINCIVLE;
+                }
+
+                else if (rand.Next(1, 5) == 4)
+                {
+                    poweruptype = PowerupType.NUKE;
+                }
+
+                else
+                {
+                    poweruptype = PowerupType.SUPERSPIN;
+                }
+                SpawnPowerUp(location, poweruptype);
             }
         }
 
         public void GetEffects()
         {
             playerManager.minShotTimer = 0.1f;
+            powerupTime = 0f;
         }
 
         public void Clear()
@@ -74,8 +102,15 @@ namespace Asteroid_Belt_Assault
             if (timeSinceLastPowerup >= timeBetweenPowerups)
             {
                 Clear();
-                
             }
+
+            powerupTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if (powerupTime >= powerupDuration)
+            {
+                playerManager.minShotTimer = 0.2f;
+            }
+
+
             
             
 
