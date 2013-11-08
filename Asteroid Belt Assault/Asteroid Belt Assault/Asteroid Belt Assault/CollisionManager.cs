@@ -147,7 +147,7 @@ namespace Asteroid_Belt_Assault
         //powerup pickup
         private void checkPlayerToPowerupCollisions()
         {
-            foreach (Sprite powerup in powerupManager.PowerUps)
+            foreach (Powerup powerup in powerupManager.PowerUps)
             {
                 if (powerup.IsCircleColliding(
                     playerManager.playerSprite.Center,
@@ -156,7 +156,9 @@ namespace Asteroid_Belt_Assault
                     powerup.Location = offScreen;
                     
                     powerupManager.Destroyed = true;
-                    powerupManager.GetEffects();
+
+                    playerManager.weapon = powerup.powerupType;
+                    //powerupManager.GetEffects();
                 }
             }
         }

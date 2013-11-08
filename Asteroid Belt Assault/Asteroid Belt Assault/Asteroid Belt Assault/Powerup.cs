@@ -30,6 +30,7 @@ namespace Asteroid_Belt_Assault
         {
 
             powerupType = PowerupType.UZI;
+            
           
         }
 
@@ -51,19 +52,19 @@ namespace Asteroid_Belt_Assault
 
                 case PowerupType.INVINCIVLE:
 
-                    this.frames[0] = new Rectangle(172, 0, 55, 40);
+                    this.frames[0] = new Rectangle(107, 118, 108, 21);
 
                     break;
 
                 case PowerupType.NUKE:
 
-                    this.frames[0] = new Rectangle(172, 0, 55, 40);
+                    this.frames[0] = new Rectangle(107, 118, 108, 21);
 
                     break;
 
                 case PowerupType.SUPERSPIN:
 
-                    this.frames[0] = new Rectangle(172, 0, 55, 40);
+                    this.frames[0] = new Rectangle(35, 35, 243, 220);
 
                     break;
             }

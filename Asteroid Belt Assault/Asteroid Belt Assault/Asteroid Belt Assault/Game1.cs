@@ -24,6 +24,7 @@ namespace Asteroid_Belt_Assault
         Texture2D titleScreen;
         Texture2D spriteSheet;
         Texture2D weaponSheet;
+        Texture2D SuperSpin;
 
         StarField starField;
         AsteroidManager asteroidManager;
@@ -31,6 +32,7 @@ namespace Asteroid_Belt_Assault
         EnemyManager enemyManager;
         ExplosionManager explosionManager;
         PowerupManager powerupManager;
+        Powerup powerup;
 
         CollisionManager collisionManager;
 
@@ -45,6 +47,10 @@ namespace Asteroid_Belt_Assault
         private Vector2 playerStartLocation = new Vector2(390, 550);
         private Vector2 scoreLocation = new Vector2(20, 10);
         private Vector2 livesLocation = new Vector2(20, 25);
+
+        Vector2 velocity;
+        Rectangle initialFrame;
+        Vector2 location;
 
 
         public Game1()
@@ -123,6 +129,12 @@ namespace Asteroid_Belt_Assault
                 new Rectangle(0, 450, 2, 2));
             
             powerupManager = new PowerupManager(weaponSheet, playerManager);
+
+            powerup = new Powerup(
+                location,
+                weaponSheet,
+                initialFrame,
+                velocity);
 
             collisionManager = new CollisionManager(
                 asteroidManager,
