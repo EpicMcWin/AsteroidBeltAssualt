@@ -62,9 +62,9 @@ namespace Asteroid_Belt_Assault
                 switch (rand.Next(1, 5))
                 {
                     case 1: poweruptype = PowerupType.UZI; break;
-                    case 2: poweruptype = PowerupType.SUPERSPIN; break;
-                    case 3: poweruptype = PowerupType.SUPERSPIN; break;
-                    case 4: poweruptype = PowerupType.SUPERSPIN; break;
+                    case 2: poweruptype = PowerupType.UZI; break;
+                    case 3: poweruptype = PowerupType.SHOTGUN; break;
+                    case 4: poweruptype = PowerupType.SHOTGUN; break;
                     default: poweruptype = PowerupType.STARTER; break;
                 }
 
