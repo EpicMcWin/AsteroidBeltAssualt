@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Asteroid_Belt_Assault
 {
-    class ShotManager
+    class RocketManager
     {
         public List<Sprite> Rocket = new List<Sprite>();
         private Rectangle screenBounds;
@@ -30,7 +30,7 @@ namespace Asteroid_Belt_Assault
             InitialFrame = initialFrame;
             FrameCount = frameCount;
             CollisionRadius = collisionRadius;
-            this.rocketSpeed = shotSpeed;
+            this.rocketSpeed = RocketSpeed;
             this.screenBounds = screenBounds;
         }
 
@@ -45,7 +45,7 @@ namespace Asteroid_Belt_Assault
                 InitialFrame,
                 velocity);
 
-            thisShot.Velocity *= shotSpeed;
+            thisRocket.Velocity *= RocketSpeed;
 
             for (int x = 1; x < FrameCount; x++)
             {
@@ -56,7 +56,7 @@ namespace Asteroid_Belt_Assault
                     InitialFrame.Height));
             }
             thisRocket.CollisionRadius = CollisionRadius;
-            Shots.Add(thisRocket);
+            Rockets.Add(thisRocket);
 
             if (playerFired)
             {
@@ -72,21 +72,21 @@ namespace Asteroid_Belt_Assault
 
         public void Update(GameTime gameTime)
         {
-            for (int x = Shots.Count - 1; x >= 0; x--)
+            for (int x = Rocket.Count - 1; x >= 0; x--)
             {
-                Shots[x].Update(gameTime);
-                if (!screenBounds.Intersects(Shots[x].Destination))
+                Rocket[x].Update(gameTime);
+                if (!screenBounds.Intersects(Rocket[x].Destination))
                 {
-                    Shots.RemoveAt(x);
+                    Rockets.RemoveAt(x);
                 }
             }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach (Sprite shot in Shots)
+            foreach (Sprite Rocket in Rockets)
             {
-                shot.Draw(spriteBatch);
+                Rocket.Draw(spriteBatch);
             }
         }
 
