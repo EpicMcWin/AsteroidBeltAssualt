@@ -10,10 +10,8 @@ namespace Asteroid_Belt_Assault
     enum PowerupType
     {
         SHOTGUN,
-        SUPERSPIN,
         UZI,
-        NUKE,
-        INVINCIVLE,
+        LAWNCHAIR,
         STARTER
     }
 
@@ -50,21 +48,9 @@ namespace Asteroid_Belt_Assault
 
                     break;
 
-                case PowerupType.INVINCIVLE:
+                case PowerupType.LAWNCHAIR:
 
-                    this.frames[0] = new Rectangle(107, 118, 108, 21);
-
-                    break;
-
-                case PowerupType.NUKE:
-
-                    this.frames[0] = new Rectangle(107, 118, 108, 21);
-
-                    break;
-
-                case PowerupType.SUPERSPIN:
-
-                    this.frames[0] = new Rectangle(35, 35, 243, 220);
+                    this.frames[0] = new Rectangle(0, 0, 124, 38);
 
                     break;
             }

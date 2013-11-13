@@ -24,7 +24,7 @@ namespace Asteroid_Belt_Assault
         Texture2D titleScreen;
         Texture2D spriteSheet;
         Texture2D weaponSheet;
-        Texture2D SuperSpin;
+
 
         StarField starField;
         AsteroidManager asteroidManager;

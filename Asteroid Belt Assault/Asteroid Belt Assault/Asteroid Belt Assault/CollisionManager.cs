@@ -153,11 +153,7 @@ namespace Asteroid_Belt_Assault
                     playerManager.playerSprite.Center,
                     playerManager.playerSprite.CollisionRadius))
                 {
-                    powerup.Location = offScreen;
-                    
-                    powerupManager.Destroyed = true;
-
-                    playerManager.weapon = powerup.powerupType;
+                    powerupManager.PickupPowerup(powerup);
                     //powerupManager.GetEffects();
                 }
             }

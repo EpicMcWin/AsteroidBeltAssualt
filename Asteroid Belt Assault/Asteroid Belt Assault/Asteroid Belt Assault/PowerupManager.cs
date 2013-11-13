@@ -14,13 +14,13 @@ namespace Asteroid_Belt_Assault
         static private float timeSinceLastPowerup = 0.0f;
         static private float timeBetweenPowerups = 5.0f;
         static private float powerupTime = 0.0f;
-        static private float powerupDuration = 10.0f;
+        static private float powerupDuration = 3.5f;
         static private Random rand = new Random();
         private PlayerManager playerManager;
-        private Powerup powerup;
+
         Texture2D WeaponSheet;
 
-        private bool destroyed;
+
         public bool Destroyed = false;
 
         public PowerupManager(Texture2D weaponSheet, PlayerManager playerManager)
@@ -30,13 +30,6 @@ namespace Asteroid_Belt_Assault
             
         }
 
-        //private Powerup shotgun = new Powerup();
-        //private Powerup superSpin = new Powerup();
-        //private Powerup uzi = new Powerup();
-        //private Powerup nuke = new Powerup();
-        //private Powerup invincible = new Powerup();
-
-        
 
         public void SpawnPowerUp(Vector2 location, PowerupType poweruptype)
         {
@@ -46,7 +39,7 @@ namespace Asteroid_Belt_Assault
             new Rectangle(172, 0, 55, 40),
             Vector2.Zero);
 
-            newPowerup.CollisionRadius = 14;
+            newPowerup.CollisionRadius = 20;
             newPowerup.powerupType = poweruptype;
             newPowerup.Frame = 1;
             PowerUps.Add(newPowerup);
@@ -59,17 +52,26 @@ namespace Asteroid_Belt_Assault
             PowerupType poweruptype;
             if (rand.Next(0, 3) == 1)
             {
-                switch (rand.Next(1, 5))
+                switch (rand.Next(1, 4))
                 {
                     case 1: poweruptype = PowerupType.UZI; break;
-                    case 2: poweruptype = PowerupType.UZI; break;
-                    case 3: poweruptype = PowerupType.SHOTGUN; break;
-                    case 4: poweruptype = PowerupType.SHOTGUN; break;
+                    case 2: poweruptype = PowerupType.SHOTGUN; break;
+                    case 3: poweruptype = PowerupType.LAWNCHAIR; break;
                     default: poweruptype = PowerupType.STARTER; break;
                 }
 
                 SpawnPowerUp(location, poweruptype);
             }
+        }
+
+        public void PickupPowerup(Powerup powerup)
+        {
+            powerup.Location = new Vector2(-500, -500);
+
+            Destroyed = true;
+
+            playerManager.weapon = powerup.powerupType;
+            powerupTime = 0;
         }
 
         //public void GetEffects(PowerupType poweruptype)
@@ -99,13 +101,13 @@ namespace Asteroid_Belt_Assault
                 Clear();
             }
 
+
             powerupTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (powerupTime >= powerupDuration)
             {
-                playerManager.minShotTimer = 0.2f;
+                playerManager.weapon = PowerupType.STARTER;
+                powerupTime = 0;
             }
-
-
             
             
 

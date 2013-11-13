@@ -21,7 +21,7 @@ namespace Asteroid_Belt_Assault
 
         private Vector2 gunOffset = new Vector2(25, 10);
         private float shotTimer = 0.0f;
-        public float minShotTimer = 0.2f;
+        private float minShotTimer = 0.2f;
         private int playerRadius = 15;
         public ShotManager PlayerShotManager;
 
@@ -85,8 +85,8 @@ namespace Asteroid_Belt_Assault
                                 playerSprite.Center + vel * 10,
                                 vel,
                                 true);
-                        
 
+                            minShotTimer = 0.2f;
                         break;
 
 
@@ -94,7 +94,7 @@ namespace Asteroid_Belt_Assault
 
                         for (int x = -3; x < 3; x++)
                         {
-                            vel = new Vector2((float)Math.Sin(playerSprite.Rotation + Math.PI / 180 * (float)x * 10), -(float)Math.Cos(playerSprite.Rotation + Math.PI / 180 * (float)x * 15));
+                            vel = new Vector2((float)Math.Sin(playerSprite.Rotation + Math.PI / 180 * (float)x * 5), -(float)Math.Cos(playerSprite.Rotation + Math.PI / 180 * (float)x * 10));
 
                             PlayerShotManager.FireShot(
                                 playerSprite.Center + vel * 10,
@@ -112,8 +112,20 @@ namespace Asteroid_Belt_Assault
                                 playerSprite.Center + vel * 10,
                                 vel,
                                 true);
-                            minShotTimer = 0.1f;
+                            minShotTimer = 0.06f;
                         break;
+
+                    case PowerupType.LAWNCHAIR:
+
+                        vel = new Vector2((float)Math.Sin(playerSprite.Rotation), -(float)Math.Cos(playerSprite.Rotation));
+
+                        PlayerShotManager.FireRocket(
+                            playerSprite.Center + vel * 15,
+                            vel,
+                            true);
+                        minRocketTimer = .5f;
+                        break;
+
                 }
 
                
