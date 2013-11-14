@@ -45,7 +45,7 @@ namespace Asteroid_Belt_Assault
                 InitialFrame,
                 velocity);
 
-            thisRocket.Velocity *= RocketSpeed;
+            thisRocket.Velocity *= rocketSpeed;
 
             for (int x = 1; x < FrameCount; x++)
             {
@@ -56,7 +56,7 @@ namespace Asteroid_Belt_Assault
                     InitialFrame.Height));
             }
             thisRocket.CollisionRadius = CollisionRadius;
-            Rockets.Add(thisRocket);
+            Rocket.Add(thisRocket);
 
             if (playerFired)
             {
@@ -77,14 +77,14 @@ namespace Asteroid_Belt_Assault
                 Rocket[x].Update(gameTime);
                 if (!screenBounds.Intersects(Rocket[x].Destination))
                 {
-                    Rockets.RemoveAt(x);
+                    Rocket.RemoveAt(x);
                 }
             }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach (Sprite Rocket in Rockets)
+            foreach (Sprite rocket in Rocket)
             {
                 Rocket.Draw(spriteBatch);
             }

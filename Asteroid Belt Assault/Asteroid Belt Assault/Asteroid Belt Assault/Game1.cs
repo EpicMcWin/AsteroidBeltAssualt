@@ -102,7 +102,8 @@ namespace Asteroid_Belt_Assault
                 this.Window.ClientBounds.Height);
 
             playerManager = new PlayerManager(
-                spriteSheet,    
+                spriteSheet, 
+                weaponSheet,
                 new Rectangle(0, 150, 50, 50),    
                 3,
                 new Rectangle(

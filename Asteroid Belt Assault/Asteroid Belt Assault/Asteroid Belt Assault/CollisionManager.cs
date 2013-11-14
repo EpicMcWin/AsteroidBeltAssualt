@@ -184,12 +184,36 @@ namespace Asteroid_Belt_Assault
                 }
             }
         }
+        private void checkRocketToAsteroidCollisions()
+        {
+            foreach (Sprite rocket in playerManager.PlayerRocketManager.Rocket)
+            {
+                foreach (Sprite asteroid in asteroidManager.Asteroids)
+                {
+                    if (rocket.IsCircleColliding(
+                        asteroid.Center,
+                        asteroid.CollisionRadius))
+                    {
+
+                        explosionManager.AddExplosion(
+                            asteroid.Center,
+                            asteroid.Velocity / 10);
+
+                        rocket.Location = offScreen;
+                        asteroid.Location = offScreen;
+                        asteroid.Destroyed = true;
+                        asteroid.Velocity += shotToAsteroidImpact;
+                    }
+                }
+            }
+        }
 
 
         public void CheckCollisions()
         {
             checkShotToEnemyCollisions();
             checkShotToAsteroidCollisions();
+            checkRocketToAsteroidCollisions();
             if (!playerManager.Destroyed)
             {
                 checkShotToPlayerCollisions();
@@ -197,6 +221,7 @@ namespace Asteroid_Belt_Assault
                 checkAsteroidToPlayerCollisions();
                 checkAsteroidToEnemyCollisions();
                 checkPlayerToPowerupCollisions();
+                
             }
         }
 

@@ -21,14 +21,18 @@ namespace Asteroid_Belt_Assault
 
         private Vector2 gunOffset = new Vector2(25, 10);
         private float shotTimer = 0.0f;
+        private float rocketTimer = 0.0f;
         private float minShotTimer = 0.2f;
+        private float minRocketTimer = 0.5f;
         private int playerRadius = 15;
         public ShotManager PlayerShotManager;
+        public RocketManager PlayerRocketManager;
 
         public PowerupType weapon;
 
         public PlayerManager(
-            Texture2D texture,  
+            Texture2D texture,
+            Texture2D weaponsheet,
             Rectangle initialFrame,
             int frameCount,
             Rectangle screenBounds)
@@ -47,6 +51,14 @@ namespace Asteroid_Belt_Assault
                 4,
                 2,
                 250f,
+                screenBounds);
+
+            PlayerRocketManager = new RocketManager(
+                weaponsheet,
+                new Rectangle(4, 43, 30, 14),
+                4,
+                2,
+                300f,
                 screenBounds);
 
             playerAreaLimit =
