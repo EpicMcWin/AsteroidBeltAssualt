@@ -58,16 +58,6 @@ namespace Asteroid_Belt_Assault
             thisRocket.CollisionRadius = CollisionRadius;
             Rocket.Add(thisRocket);
 
-            if (playerFired)
-            {
-
-                SoundManager.PlayPlayerShot();
-            }
-            else
-            {
-
-                SoundManager.PlayEnemyShot();
-            }
         }
 
         public void Update(GameTime gameTime)
@@ -86,7 +76,7 @@ namespace Asteroid_Belt_Assault
         {
             foreach (Sprite rocket in Rocket)
             {
-                Rocket.Draw(spriteBatch);
+                rocket.Draw(spriteBatch);
             }
         }
 

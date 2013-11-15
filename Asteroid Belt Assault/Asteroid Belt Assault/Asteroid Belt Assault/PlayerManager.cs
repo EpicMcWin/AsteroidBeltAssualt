@@ -57,7 +57,7 @@ namespace Asteroid_Belt_Assault
                 weaponsheet,
                 new Rectangle(4, 43, 30, 14),
                 4,
-                2,
+                4,
                 300f,
                 screenBounds);
 
@@ -131,7 +131,7 @@ namespace Asteroid_Belt_Assault
 
                         vel = new Vector2((float)Math.Sin(playerSprite.Rotation), -(float)Math.Cos(playerSprite.Rotation));
 
-                        PlayerShotManager.FireRocket(
+                        PlayerRocketManager.FireRocket(
                             playerSprite.Center + vel * 15,
                             vel,
                             true);
